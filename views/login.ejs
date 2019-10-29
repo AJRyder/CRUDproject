@@ -3,18 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
   </head>
   <body>
       <header class="cam-Geek-Header">
+          <div id="parallelogram2"></div>
+          <div id="parallelogram"></div>
           <h1>Shot List </h1> 
-    </header>
-    <header>
-      
-      <h1>Login to Shot List </h1>
-    </header>
+          <div class="homeRoute">
+                  <a href="/">Home</a>
+          </div>
+      </header>    
 
-  <h4>Login</h4>
-  <form action="/auth/login" method="POST">
+  <h4 class="loginDisplay">Login Here</h4>
+
+  <form class="loginForm" action="/auth/login" method="POST">
     <input type="text" name="username" placeholder="username"><br>
     <input type="email" name="email" placeholder="email"><br>
     <input type="password" name="password" placeholder="password"><br>

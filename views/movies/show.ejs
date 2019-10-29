@@ -37,7 +37,6 @@
                    <div class = "movieDetails">
                         <div>
                            <span>Trailer:</span></br>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/t433PEQGErc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                            </div>
                       <span class="movieDetailsFlair"> Shot On:</span> </br><%=movie.shotOn%></br>
                    </br><span class="movieDetailsFlair"> Lenses Used:</span>  <%=movie.lenses%></br>
@@ -54,8 +53,9 @@
                     </div> 
 
         <button class="movieEditBtn">
-            <a href="/movies/<%=movie._id%>/edit">+
+            <a href="/movies/<%=movie._id%>/edit">+ Update Listing
             </a>
+            
         </button>
         <form action="/users/<%=currentUser._id%>?_method=PUT" method="POST">
             <input class="hidden-info" name="newWatchList" value=<%=movie._id%>>

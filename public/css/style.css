@@ -59,6 +59,73 @@ img {
     opacity: .7; 
 
 }
+
+/* LOGIN,REGISTER,HOME PAGE */
+.welcomeDisplay{
+    color: white; 
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center; 
+}
+
+.registerUser a{
+    position: relative; 
+    top: 33px;
+    left: 490px; 
+    margin: 0,10px,0,0;  
+    right: 10px; 
+    color: whitesmoke; 
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+}
+.registerUser a:hover{ 
+    color: grey; 
+}
+.loginUser a{
+    position: relative; 
+    top: -3px;
+    left: 670px; 
+    margin: 0,10px,0,0;  
+    right: 10px; 
+    color: whitesmoke; 
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+}
+.loginUser a:hover{
+    color: grey; 
+}
+.loginDisplay{
+    color: white; 
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center; 
+    font-size: 30px; 
+    top: 0; 
+}
+.registerMsgDisplay {
+    color: white; 
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center; 
+    font-size: 30px; 
+    top: 0; 
+}
+.regForm{
+    text-align: center; 
+}
+.regForm input{ 
+    background-color: rgba(62, 0, 177, 0.603); 
+    color: white;
+}
+
+.loginForm{
+    text-align: center;
+}
+
+.loginForm input{ 
+    background-color: rgba(62, 0, 177, 0.603); 
+    color: white;
+}
+/* MOVIE SHOW PAGE */
 .movieShowPagePoster img{
     opacity: 1; 
     padding: 0; 
@@ -127,13 +194,20 @@ img:hover {
 }
 
 .moviesLink a{
+    position: absolute;
+    top: 79px; 
+    left: 600px; 
     color: whitesmoke; 
     font-size: 20px; 
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none; 
+
 }
 
 .usersLink a{
+    position: absolute; 
+    top: 79px; 
+    left: 720px; 
     color: whitesmoke; 
     font-size: 20px; 
     font-family: Arial, Helvetica, sans-serif;
@@ -147,15 +221,16 @@ img:hover {
 }
 
 .usersOverview img {
-        display: grid; 
-        background-color: gold; 
+        display: flex;
+        position: flex;  
+        background-color: rgba(62, 0, 177, 0.603); 
         max-width: 500px; 
         width: 150px;
         height: 150px; 
         max-height: 500px; 
         padding: 5px; 
         object-fit: fill;
-        border: 2px solid white; 
+        border: .5px solid white; 
 }
 
 /* USER SHOW PAGE  */
@@ -228,7 +303,12 @@ img:hover {
     text-align: center; 
     color: white; 
 }
-
+/* Movie Index Page */
+.recentUpdatesDisplay{
+    color: white; 
+    text-align: center; 
+    font-family: 'Fredericka the Great', cursive;
+}
 /* Movie Show page */
 .movieDetails{
     position: absolute; 
@@ -305,6 +385,33 @@ img:hover {
 }
 .movieDetailsFlair{
     color: grey; 
- 
 }
-                       
+.movieEditForm span { 
+    color: grey; 
+}
+.movieEditForm{
+    position: absolute; 
+    color: white; 
+    left: 350px; 
+}
+.movieEditForm input{ 
+    background-color: rgba(62, 0, 177, 0.603); 
+    color: white; 
+    text-align: center; 
+    box-shadow: 3px white; 
+}
+.backToMovieShowPage{
+    color: white; 
+    text-decoration: none; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; 
+}
+
+.backToMovieShowPage:hover { 
+    color: grey; 
+}
+.movieEditMsgDisplay{
+    color: white; 
+    text-align: center; 
+    font-family: 'Fredericka the Great', cursive;
+}                       
