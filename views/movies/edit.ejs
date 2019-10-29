@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+        <header class="cam-Geek-Header">
+                <div id="parallelogram2"></div>
+                <div id="parallelogram"></div>
+                <h1>Shot List </h1> 
+                <div class="homeRoute">
+                        <a href="/">Home</a>
+                </div>
+        </header>
+    <h1>Movie Edit page</h1>
+    <nav> 
+        Back to Users: 
+    </nav>
+	<main>
+            
+			<form action="/movies/<%=movie._id%>?_method=PUT" method="post">
+				Title</br><input type="text" name="title" value="<%=movie.title%>"/><br/>
+                Poster Art</br><input type='text' name="posterUrl" value="<%=movie.posterUrl%>"/><br/>
+                Shot On: <input type='text' name="shotOn" value="<%=movie.shotOn%>">
+                Lenses: <input type='text' name="lenses" value="<%=movie.lenses%>">
+                Cast: <input type='text' name="cast" value="<%=movie.cast%>">
+                Crew: <input type='text' name='crew' value="<%=movie.crew%>">
+                Aspect Ratio: <input type='text' name="aspectRatio" value="<%=movie.aspectRatio%>"></br>
+                Director: <input type='text' name='director' value="<%=movie.director%>">
+                DoP: <input type='text' name='dop' value="<%=movie.dop%>">
+                Synopsis: <input type='text' name='synopsis' value="<%=movie.synopsis%>">
+                Shooting Regions: <input type='text' name='ShootRegions' value="<%=movie.shootRegions%>"></br>
+                trailer: <input type='text' name='trailer' value="<%=movie.trailer%>">
+				<input type="submit" value="Update Movie"/>
+            </form>
+            <img src="<%= movie.posterUrl %>" />
+		</main>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

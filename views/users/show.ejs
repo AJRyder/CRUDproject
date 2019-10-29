@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title></title>
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+	</head>
+	<body>
+        
+            <header class="cam-Geek-Header">
+                    <div id="parallelogram2"></div>
+                    <div id="parallelogram"></div>
+                    <h1>Shot List </h1> 
+                    <div class="homeRoute">
+                            <a href="/">Home</a>
+                    </div>
+            </header>
+            <header class="watchListTitle">
+                <h2><%=user.username%>'s Watch List</h2>
+            </header>
+
+            <button class="showBackToUsersBtn">
+                <a href="/users">Back to Users</a>
+            </button>
+        
+            <button>
+                <a class ="newUserBtnTxt" href="/movies/">All Movies</a>
+            </button>
+           
+            
+            <img class="profilePic" src="<%=user.profilePic%>">
+<div class="username">
+    Username: </br>
+    <%=user.username%>
+</div>
+			<div class="favGenres">   
+                Favorite Genres: 
+            </br> <span></span><%=user.favoriteGenre%></span></br>
+            </div>
+
+			<section>
+                <main class="userWatchListGallery">
+                    <%for(let i = 0; i < user.watchList.length; i++) { %>
+                        <img src=<%=user.watchList[i].posterUrl%>>
+                    <%}%>
+                </main>
+			</section>    
+                    
+                <section>
+                    <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+                          <button class="userProfDelete" class ="newUserBtnTxt" class="DELETE" type='submit'>Delete Profile </button>
+                    </form>
+                </section>
+
+                <section>
+                    <button class ="userShowEditBtn">
+                        <a class ="newUserBtnTxt" href="/users/<%=user._id%>/edit">Edit User</a>
+                    </button>
+                </section>
+
+			</section>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	</body>
