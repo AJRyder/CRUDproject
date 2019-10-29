@@ -11,35 +11,40 @@
 </head>
 <body>
        
-        <header class="cam-Geek-Header">
-                <div id="parallelogram"></div>
-                    <h1>Shot List </h1> 
-            </header>
-        <nav class="homeRoute">
-                <a href="/">Home</a>
-        </nav>
+    <header class="cam-Geek-Header">
+            <div id="parallelogram2"></div>
+            <div id="parallelogram"></div>
+            <h1>Shot List </h1> 
+            <div class="homeRoute">
+                    <a href="/">Home</a>
+            </div>
+    </header>
 
-    <h1>user edit page</h1>
-        <button class ="userEditBackToUsers">
-            <a class ="newUserBtnTxt" href="/users">Back to User List</a>
-        </button>    
+    <header>
+        <h2>Edit <%=user.username%>'s Account</h2>
+    </header>  
+        
+        <a class="backToUsers" href="/users">Back to Users</a>
+        <a class="backToMovies" href="/movies/">All Movies</a>
+            
+  		<main>
+            <form class= "editUserForm" action="/users/<%=user._id%>?_method=PUT" method="post">
 
-		<main>
-                <header>
-                    <h2>Edit <%=user.username%>'s Account</h2>
-                </header>
+                <span class="editUserFormData">Username:</span></br>
+                    <input type="text" name="username" value="<%=user.username%>"/><br/>
+                
+                <span class="editUserFormData">Password:</span></br>
+                    <input type="password" name="password" value="<%=user.password%>"/></br>
+                
+                <span class="editUserFormData">Favorite Genres:</span></br>
+                    <input type='text' name="favoriteGenre" value="<%user.favoriteGenre%>"></br>
 
-                <form class= "editUserForm" action="/users/<%=user._id%>?_method=PUT" method="post">
-                    <span class="editUserFormData">Username:</span></br><input type="text" name="username" value="<%=user.username%>"/><br/>
-                    <span class="editUserFormData">Password:</span></br><input type="password" name="password" value="<%=user.password%>"/></br>
-                    Favorite Genres: <input type='text' name="favoriteGenre" value="<%user.favoriteGenre%>">
-                    <span class="uploadPictureText">Upload Picture:</span>
+                <span class="uploadPictureText">Upload Picture:</span>
                     
-                    </br><input type="text" name="profilePic"/>
+                </br><input type="text" name="profilePic"/>
     
                 </br><input class="updateUserSubmit" type="submit" value="Update User"/>
                 </form>
-            </main>
-
-</body>
+        </main>
+    </body>
 </html>

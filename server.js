@@ -28,7 +28,6 @@ require('./db/db');
 
 //Home page route 
 app.get('/',(req, res) => {
-  console.log(req.session, 'home route')
   res.render('index.ejs', {
     message: req.session.message,
     logOut: req.session.logOutMsg 

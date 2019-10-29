@@ -9,7 +9,6 @@ router.post('/login', (req, res) => {
   req.session.username = req.body.username;
   req.session.email = req.body.email; 
   req.session.logged   = true;
-  console.log(req.session);
   res.redirect('/users')
 });
 
@@ -50,7 +49,6 @@ router.get('/', async(req, res)=>{
       })
       } catch(err) { 
       res.send(err)
-      console.log(err)
   }
 })
 
@@ -63,12 +61,10 @@ router.get('/new', (req, res)=>{
 router.get('/:id', async(req,res)=>{
   try {
       const user = await User.findById(req.params.id).populate('watchList')
-      console.log(user, 'THIS IS USER USER USER')
       res.render('users/show.ejs', {
           user,
       });
   } catch(err){
-    console.log(err)
     res.send(err)
   }
 });
@@ -81,7 +77,6 @@ router.post('/', async(req,res)=>{
       user: createdUser,
     })
   } catch (err){
-    console.log(err)
     res.send(err)
 }
 });
@@ -94,11 +89,9 @@ router.put('/:id', async(req,res)=>{
         updateUser.watchList.push(req.body.newWatchList)
         updateUser.save()
       }
-      console.log(updateUser, '<---------- THIS IS THE UPDATED USER WITH NEW WATCHLIST')
       res.redirect('/users/'+ req.params.id)
   } catch {
       res.send(err)
-      console.log(err)
   }
 });
 
@@ -111,7 +104,6 @@ router.get('/:id/edit', async(req, res)=>{
       });
   } catch(err){
       res.render(err)
-      console.log(err)
   }
 });
 

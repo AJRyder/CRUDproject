@@ -29,7 +29,8 @@
 			<form class="newMovieForm" action="/movies" method="post">
             </br><span>New Movie Title</span></br><input type="text" name="title"/></br>
 				<span>New Movie Poster URL Here: </span>
-			    </br><input type="text" name="posterUrl"/><br/>
+                </br><input type="text" name="posterUrl"/><br/>
+                <input class="hidden-info" name="userId" value=<%=currentUser._id%>>
 				<input type="submit" value="Publish New Movie"/>
 			</form>
         </main>

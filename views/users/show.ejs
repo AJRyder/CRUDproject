@@ -21,22 +21,19 @@
                 <h2><%=user.username%>'s Watch List</h2>
             </header>
 
-            <button class="showBackToUsersBtn">
-                <a href="/users">Back to Users</a>
-            </button>
-        
-            <button>
-                <a class ="newUserBtnTxt" href="/movies/">All Movies</a>
-            </button>
+                <a class="backToUsers" href="/users">Back to Users</a>
+            
+                <a class="backToMovies" href="/movies/">All Movies</a>
+   
            
             
             <img class="profilePic" src="<%=user.profilePic%>">
 <div class="username">
-    Username: </br>
+    <span class="movieDetailsFlair">Username: </br></span>
     <%=user.username%>
 </div>
 			<div class="favGenres">   
-                Favorite Genres: 
+                    <span class="movieDetailsFlair">Favorite Genres: </span>
             </br> <span></span><%=user.favoriteGenre%></span></br>
             </div>
 
@@ -44,6 +41,10 @@
                 <main class="userWatchListGallery">
                     <%for(let i = 0; i < user.watchList.length; i++) { %>
                         <img src=<%=user.watchList[i].posterUrl%>>
+                        <form action="<%=user.watchList[i].posterUrl%>" method="POST">
+                            <button type='submit'>Show Poster</button>
+                        </form>
+   
                     <%}%>
                 </main>
 			</section>    

@@ -19,7 +19,6 @@ router.post('/registration', (req, res, next) => {
     userDbEntry.username = req.body.username;
     userDbEntry.password = passwordHash
     User.create(userDbEntry, (err, user) => {
-        console.log(user)
         req.session.username = user.username;
         req.session.logged   = true;
         res.redirect('/users')
@@ -35,10 +34,8 @@ router.post('/login', (req, res, next) => {
                     req.session.username = req.body.username;
                     req.session.logged   = true;
                     req.session.currentUser = user
-                    console.log(req.session, req.body)
                     res.redirect('/users')
                 } else {
-                console.log('else in bcrypt compare')
                 req.session.message = 'Username or password are incorrect';
                 res.redirect('/sessions/login')
                 }

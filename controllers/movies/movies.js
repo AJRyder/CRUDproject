@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
              })
       } else {
         res.redirect('/sessions/login')
-        console.log(req.sessions, "<--- this is the req.session info")
       }
   });
 
@@ -25,19 +24,17 @@ router.get('/', async(req, res)=>{
         })
     } catch(err) { 
         res.send(err)
-        console.log(err)
     }
 })
 
 //new route 
 router.get('/new', async(req, res)=>{
     try{
-        const allUsers = await User.find({});
+        console.log(req.session.currentUser)
         res.render('movies/new.ejs', {
-            users: allUsers
+            currentUser: req.session.currentUser
         })
     } catch { 
-        console.log(err)
         res.send(err)
     }
 })
@@ -71,7 +68,6 @@ router.post('/', async(req,res)=>{
         foundUser.save()
         res.redirect('/movies')
     } catch(err) {
-        console.log(err)
         res.send(err)
     }
 })
@@ -85,7 +81,6 @@ router.get('/:id/edit', async(req,res)=>{
         })
     } catch(err) { 
         res.send(err)
-        console.log(err)
     }
 })
 
@@ -95,7 +90,6 @@ router.put('/:id', async(req, res)=>{
         const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.redirect('/movies')
     } catch(err) { 
-        console.log(err)
         res.send(err)
     }
 })
@@ -106,9 +100,7 @@ router.delete('/:id', async(req, res)=>{
     try {
         const deletedMovie = await Movie.findByIdAndRemove(req.params.id)
         res.redirect('/movies')
-        console.log(deletedMovie)
     } catch(err) { 
-        console.log(err)
         res.send(err)
     }
 })

@@ -48,7 +48,7 @@ body, html {
     padding: 0; 
     height: 100%; 
     width: 100%; 
-    background-color: black;
+    background-color: black; 
 }
 img { 
     height: 360px; 
@@ -57,6 +57,7 @@ img {
     max-height: 360px;
     padding: 5px; 
     opacity: .7; 
+    z-index: 1; 
 
 }
 
@@ -140,7 +141,7 @@ img:hover {
 }
 .moviesToHomeRoute a{
     position: relative; 
-    top: 33px;
+    top: 37px;
     left: 490px; 
     margin: 0,10px,0,0;  
     right: 10px; 
@@ -172,7 +173,7 @@ img:hover {
 
 .goToNewMoviePage a{
     position: relative; 
-    top: -102px;
+    top: -104px;
     left: 670px; 
     margin: 0,10px,0,0;  
     right: 10px; 
@@ -183,7 +184,7 @@ img:hover {
 }
 .backToUsers a {  
     position: relative; 
-    top: -125px;
+    top: -128px;
     left: 970px; 
     margin: 0,10px,0,0;  
     right: 10px; 
@@ -203,7 +204,15 @@ img:hover {
     text-decoration: none; 
 
 }
-
+.backToMovies {
+  color: white; 
+  text-decoration: none; 
+  font-size: 20px; 
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute; 
+  left: 720px; 
+  top: 80px; 
+}
 .usersLink a{
     position: absolute; 
     top: 79px; 
@@ -248,13 +257,14 @@ img:hover {
     max-height: 180px; 
     width: auto; 
     left: 0px; 
-    border: solid white; 
+    border: solid rgba(62, 0, 177); 
     border-radius: 4px auto;  
 }
 
 .username{
     position: absolute; 
-    left: 250px; 
+    left: 300px;
+    top: 120px;  
     color: white; 
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -267,21 +277,35 @@ img:hover {
 .favGenres{
     position: absolute; 
     color: white; 
-    top: 255px; 
-    left: 250px; 
+    top: 175px; 
+    left: 300px; 
     z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .userProfDelete{
     position: absolute; 
-    left: 250px; 
-    top: 186px; 
+    left: 130px; 
+    top: 320px; 
     width: 125px; 
+    color: palevioletred;
+    background-color: gold; 
 }
 .userShowEditBtn{
     position: absolute; 
-    left: 250px; 
-    top:210px; 
+    left: 0px; 
+    top:320px; 
+    height: 18px; 
     width: 125px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+}
+.userShowEditBtn:hover, .userShowEditBtn a:hover{
+    background-color: grey; 
+    color: white; 
+}
+.userShowEditBtn a{
+    text-decoration: none; 
+    color: black; 
 }
 .userWatchListGallery{
     position: absolute; 
@@ -400,8 +424,27 @@ img:hover {
     text-align: center; 
     box-shadow: 3px white; 
 }
+.editUserForm input { 
+    background-color: rgba(62, 0, 177, 0.603); 
+    color: white; 
+    text-align: center; 
+    box-shadow: 3px white; 
+}
+.editUserForm{ 
+    color: grey; 
+    text-align: center; 
+}
 .backToMovieShowPage{
     color: white; 
+    text-decoration: none; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; 
+}
+.toUsersFromMovieIndx a{
+    color: white; 
+    position: absolute;
+    left: 900px; 
+    top: 80px; 
     text-decoration: none; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px; 
@@ -410,8 +453,21 @@ img:hover {
 .backToMovieShowPage:hover { 
     color: grey; 
 }
+.backToUsers{
+    position: absolute; 
+    color: white; 
+    text-decoration: none; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px; 
+    top: 80px; 
+    left: 900px; 
+}
 .movieEditMsgDisplay{
     color: white; 
     text-align: center; 
     font-family: 'Fredericka the Great', cursive;
-}                       
+}       
+
+.userWelcome{
+    color: white; 
+}
