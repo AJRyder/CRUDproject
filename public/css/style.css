@@ -27,6 +27,7 @@
 
 .parallelogram2{
     display: flex; 
+    flex-direction: row;
     position: fixed;
     align-items: center; 
     margin-right: -4em; 
@@ -44,6 +45,7 @@
 }
 .parallelogram2 a{ 
     transform: skew(30deg);
+    position: 
 }
 .userGreeting{
     font-size: 25px; 
@@ -430,6 +432,7 @@ img:hover {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
 
 .movieCard, .movieimages{
     display: flex; 

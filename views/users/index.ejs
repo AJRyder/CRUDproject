@@ -3,11 +3,11 @@
     user: currentUser
     }) %>
 
-    <div class="container">
+    <div class="userContainer">
         <div class="usersOverview">
             </br> <% for(let i =0; i < users.length; i++){%>
                 <a class = "userNameList" href="/users/<%=users[i]._id%>">
-            </br><%=users[i].username%></br><img class="img-responsive" src=<%=users[i].profilePic%>></br>
+            </br><%=users[i].username%></br><img class="profilePic" src=<%=users[i].profilePic%>></br>
                 </a>
             <%}%>
         </div>
