@@ -1,30 +1,7 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-        <title></title>
-        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-	</head>
-	<body>
-            <header class="cam-Geek-Header">
-                    <div id="parallelogram2"></div>
-                    <div id="parallelogram"></div>
-                    <h1>Shot List </h1> 
-                    <div class="homeRoute">
-                            <a href="/">Home</a>
-                    </div>
-            </header>
-	
-            <div class="goToMoviePage" class="movieNewPage"> 
-                <a href="/movies/">Back to Movies</a>
-            </div>
-            
-            <div class="toUsersFromNewMovie" class="movieNewPage">
-                <a href="/users/">Back to Users</a>
-            </div>
+<%- include('../partials/navbar.ejs', {
+    user: user
+    }) %>
 		<main>
 			<form class="newMovieForm" action="/movies" method="post">
             </br><span>New Movie Title</span></br><input type="text" name="title"/></br>

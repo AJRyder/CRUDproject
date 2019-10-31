@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
                 });
              })
       } else {
-        res.redirect('/sessions/login')
+        res.redirect('/auth/login')
       }
   });
 

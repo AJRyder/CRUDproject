@@ -1,55 +1,190 @@
 
-.cam-Geek-Header{ 
-    height: 100px; 
-    margin: 0px 0px 10px 0px; 
-    font-size: 30px; 
-    left: 50px; 
-    font-family: 'Fredericka the Great', cursive;
-    letter-spacing: 3px;
-    color: whitesmoke;
-    text-shadow: 3px black; 
-    background-image: url("https://previews.123rf.com/images/ensup/ensup1512/ensup151200019/50649689-film-frame-texture.jpg");
-    background-size: cover; 
-    background-color: rgb(0, 0, 0);
-    border-bottom: solid white 1px; 
-}
+/* NAV GRAPHICS  */
 
-.cam-Geek-Header h1{
+.shotListTitle a{
+    display: fixed; 
+    color: white;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 45px; 
+    letter-spacing: 3px;
+    text-decoration: none; 
     text-shadow: 3px black;
-    left: 5px; 
-} 
-#parallelogram {
-    position: absolute; 
-    left: -50px; 
-    top: 0px;  
-    width: 500px;
-    height: 100px;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
-    -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-    -o-transform: skew(30deg);
-    transform: skew(30deg);
-}
-#parallelogram2 {
-    position: relative; 
     left: 0px; 
-    top: 70px;  
-    width: auto;
-    height: 30px;
-    background: linear-gradient(90deg, rgba(83,83,83,1) 0%, rgb(44, 44, 44) 100%, rgba(242,242,242,1) 100%);    -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-    -o-transform: skew(30deg);
-    transform: skew(30deg);
+    margin-left: 10px; 
+} 
+.parallelogram {
+    display: fixed; 
+    position: fixed;
+    left: -4em;
+    top: 85px;
+    width: 90%;
+	height: 30px;
+	transform: skew(-30deg);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(155, 155, 155) 100%, rgba(242,242,242,1) 100%);
+    border: 1px solid white; 
+}
+.userGreeting{
+    font-size: 25px; 
+    margin-left: 15%; 
+    top: 5%; 
+    text-align: justify; 
+    color: whitesmoke;
+}
+body {
+    margin: 100rem 0 0 0;
+    margin-top: 0px; 
+    height: 77rem;
 }
 
 body, html { 
-    margin: 0; 
-    margin-right: 50px; 
+    margin: 5rem 0 0 0;
     padding: 0; 
     height: 100%; 
     width: 100%; 
     background-color: black; 
 }
+
+.nav {
+    position: fixed;
+    border-bottom: 1px solid black;
+    width: 100%;
+    top: 0;
+    background:linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
+    border-bottom: 1px solid white; 
+    z-index: 1; 
+}
+
+.nav-header {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: px;
+    align-items: center;
+}
+    
+.nav-left {
+    width: 33.333%;
+    text-align: left;
+    padding: 15px;
+}
+.nav-center {
+    width: 33.333%;
+    text-align: center;
+}
+.nav-link:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.nav-link {
+    text-decoration: none;
+    margin-left: 3%;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.hamburger-menu {
+    width: 40px;
+    height: 25px;
+    position: relative;
+    margin: 14px 15% 0 auto;
+    z-index: 2; 
+    display: none;
+}
+  
+.bar {
+display: block; 
+position: absolute;
+width: 25px;
+height: 3px;
+left: 0;
+border-radius: 6px;
+background-color:white;
+transition: all .50s ease-in-out;
+}
+  
+.bar:nth-child(1) {
+top: 0px;
+}
+
+.bar:nth-child(2) {
+top: 22.5%
+}
+
+.bar:nth-child(3) {
+top: 45%;
+}
+
+.open > .bar {
+transition: all .50s ease-in-out;
+background-color: white;
+}
+
+.open > .bar:nth-child(1) {
+top: 45%;
+transform: rotate(135deg);
+}
+
+.open > .bar:nth-child(2) {
+left: -60px;
+opacity: 0;
+}
+
+.open > .bar:nth-child(3) {
+transform: rotate(-135deg);
+}
+
+.overlay {
+height: 100%;
+width: 100%;
+position: fixed;
+background-color: rgba(0, 0, 0, 0.698);
+top: 0;
+left: -123rem;
+z-index: 1;
+transition: all .60s ease-in-out;
+}
+
+.overlay.show {
+left: 0;
+}
+
+.overlay-content {
+display: flex;
+position: relative;
+top: 15%;
+width: 100%;
+text-align: center;
+margin-top: 30px;
+flex-direction: column;
+}
+
+.overlay-link {
+color: white;
+text-decoration: none;
+font-size: 36px;
+}
+
+@media (max-width: 822px) {
+.hamburger-menu {
+    display: block;
+}
+
+.nav-right > a {
+    display: none;
+}
+.nav-right {
+    width: 40%;
+}
+.nav-left {
+    width: 60%;
+}
+.nav-center {
+    width: 0%;
+}
+
+}  
+
 img { 
     height: 360px; 
     width: 240px; 
@@ -57,17 +192,37 @@ img {
     max-height: 360px;
     padding: 5px; 
     opacity: .7; 
-    z-index: 1; 
+    border: 1px solid white; 
 
 }
 
-/* LOGIN,REGISTER,HOME PAGE */
-.welcomeDisplay{
+
+/* LOGIN,REGISTER,HOME PAGE BUTTONS/LINKS */
+
+.logOut { 
+    color: white; 
+}
+.welcomeDisplay, .welcomeDisplay h1{
+    position: flex; 
+    top: 175px;
+    left: 150px;  
     color: white; 
     font-family: 'Fredericka the Great', cursive;
     text-align: center; 
+   
 }
-
+.logOutUser, .logOutUser a {
+    position: relative; 
+    top: -10px;
+    left: 490px; 
+    margin: 0,10px,0,0;  
+    right: 10px; 
+    color:yellow;  
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+    text-shadow: 2px 2px solid black ;
+}
 .registerUser a{
     position: relative; 
     top: 33px;
@@ -126,6 +281,7 @@ img {
     background-color: rgba(62, 0, 177, 0.603); 
     color: white;
 }
+
 /* MOVIE SHOW PAGE */
 .movieShowPagePoster img{
     opacity: 1; 
@@ -172,7 +328,6 @@ img:hover {
 }
 
 .goToNewMoviePage a{
-    position: relative; 
     top: -104px;
     left: 670px; 
     margin: 0,10px,0,0;  
@@ -243,17 +398,48 @@ img:hover {
 }
 
 /* USER SHOW PAGE  */
+
+.container{
+    display: flex; 
+    align-items:center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.movieCard, .movieimages{
+    display: flex; 
+    flex-direction: column;    
+}
+.displayBigPosterBtn{
+    display: flex; 
+    flex-direction: row; 
+    
+}
+.displayBigPosterBtn button{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
+    color: whitesmoke;
+}
+.removeFromWatchListBtn{
+    display: flex; 
+    flex-direction: row; 
+
+    
+}
+.removeFromWatchListBtn button{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
+    color: whitesmoke;
+}
 .watchListTitle{
     color: white; 
-    position: absolute;
     text-align: center;
-    top: 450px; 
+    font-size: 40px; 
+    top: 350px; 
+    left: 500px; 
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
 }
-.watchListTitle h2{
-    text-align: center;
-}
+
 .profilePic {
-    position: absolute; 
     max-height: 180px; 
     width: auto; 
     left: 0px; 
@@ -262,7 +448,6 @@ img:hover {
 }
 
 .username{
-    position: absolute; 
     left: 300px;
     top: 120px;  
     color: white; 
@@ -270,12 +455,11 @@ img:hover {
 }
 .showBackToUsersBtn {
     position: absolute;
-   left: 250px; 
+    left: 250px; 
     width: 125px; 
 }
 
 .favGenres{
-    position: absolute; 
     color: white; 
     top: 175px; 
     left: 300px; 
@@ -283,7 +467,6 @@ img:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 .userProfDelete{
-    position: absolute; 
     left: 130px; 
     top: 320px; 
     width: 125px; 
@@ -291,42 +474,19 @@ img:hover {
     background-color: gold; 
 }
 .userShowEditBtn{
-    position: absolute; 
-    left: 0px; 
-    top:320px; 
+    position: flex; 
     height: 18px; 
     width: 125px; 
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none; 
 }
-.userShowEditBtn:hover, .userShowEditBtn a:hover{
+.userShowEditBtn button:hover{
     background-color: grey; 
     color: white; 
 }
-.userShowEditBtn a{
-    text-decoration: none; 
-    color: black; 
-}
-.userWatchListGallery{
-    position: absolute; 
-    top: 500px; 
-}
 
-/* new User Page */
-.CreateNewUserSubtitle{
-    color: white; 
-    text-align: center;
-    font-size: 50px; 
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.newUserForm{
-    position: relative; 
-    top: 50px; 
-    font-size: 35px; 
-    text-align: center; 
-    color: white; 
-}
+
 /* Movie Index Page */
 .recentUpdatesDisplay{
     color: white; 
@@ -356,7 +516,7 @@ img:hover {
     background: grey; 
 }
 .movieTitle{
-    position: absolute; 
+    position: flex; 
     font-size: 50px; 
     color: white; 
     font-family: Arial, Helvetica, sans-serif;
@@ -398,9 +558,7 @@ img:hover {
     text-decoration: none; 
 }
 .toUsersFromNewMovie a{
-    position: relative; 
-    top: -56px;
-    left: 900px; 
+  
     margin: 0,10px,0,0;  
     color: whitesmoke; 
     font-size: 20px; 
@@ -414,7 +572,7 @@ img:hover {
     color: grey; 
 }
 .movieEditForm{
-    position: absolute; 
+    position: flex; 
     color: white; 
     left: 350px; 
 }
@@ -435,6 +593,7 @@ img:hover {
     text-align: center; 
 }
 .backToMovieShowPage{
+    position: flex; 
     color: white; 
     text-decoration: none; 
     font-family: Arial, Helvetica, sans-serif;

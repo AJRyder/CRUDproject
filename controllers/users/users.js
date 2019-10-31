@@ -27,35 +27,25 @@ router.post('/', async (req, res) => {
   }
 })
 
-router.get('/logout', (req, res) => {
-  req.session.destroy(function(err){
-  
-	    if(err){
-	      // do something
-	    } else {
-	      res.redirect('/')
-	    }
-  })
-})
-
-
 
 //index route 
 router.get('/', async(req, res)=>{
   try { 
-      const allUsers = await User.find({}); 
+      const allUsers = await User.find({});
+      console.log(req.session.currentUser) 
       res.render('users/index.ejs', {
-          users: allUsers
+          users: allUsers,
+         currentUser: req.session.username
       })
       } catch(err) { 
       res.send(err)
   }
 })
 
-//new route
-router.get('/new', (req, res)=>{
-  res.render('users/new.ejs')
-});
+// //new route
+// router.get('/new', (req, res)=>{
+//   res.render('users/new.ejs')
+// });
 
 //show route 
 router.get('/:id', async(req,res)=>{
@@ -63,23 +53,14 @@ router.get('/:id', async(req,res)=>{
       const user = await User.findById(req.params.id).populate('watchList')
       res.render('users/show.ejs', {
           user,
+          currentUser: req.session.username
       });
   } catch(err){
     res.send(err)
   }
 });
 
-// Post route 
-router.post('/', async(req,res)=>{
-  try{
-    const createdUser = await User.create(req.body)
-    res.redirect('/users', {
-      user: createdUser,
-    })
-  } catch (err){
-    res.send(err)
-}
-});
+
 
 // Put route 
 router.put('/:id', async(req,res)=>{
@@ -88,9 +69,18 @@ router.put('/:id', async(req,res)=>{
       if(req.body.newWatchList) {
         updateUser.watchList.push(req.body.newWatchList)
         updateUser.save()
+      } else if(req.body.removedMovie) {
+        const index = updateUser.watchList.indexOf(req.body.removedMovie)
+        updateUser.watchList.splice(index, 1)
+        console.log(updateUser.watchList)
+        updateUser.save()
+        // const newWatchList = updateUser.watchList.filter(movie => movie._id !== removedMovie)
+        // updateUser.watchList = newWatchList
+        // updateUser.save()
       }
       res.redirect('/users/'+ req.params.id)
   } catch {
+    console.log(err)
       res.send(err)
   }
 });
@@ -101,6 +91,7 @@ router.get('/:id/edit', async(req, res)=>{
       const editUser = await User.findById(req.params.id)
       res.render('users/edit.ejs', {
           user: editUser, 
+
       });
   } catch(err){
       res.render(err)

@@ -1,32 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
+<%- include('../partials/navbar.ejs', {
+    user: user
+    }) %>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-</head>
-<body>
-       
-    <header class="cam-Geek-Header">
-            <div id="parallelogram2"></div>
-            <div id="parallelogram"></div>
-            <h1>Shot List </h1> 
-            <div class="homeRoute">
-                    <a href="/">Home</a>
-            </div>
-    </header>
 
     <header>
         <h2>Edit <%=user.username%>'s Account</h2>
     </header>  
-        
-        <a class="backToUsers" href="/users">Back to Users</a>
-        <a class="backToMovies" href="/movies/">All Movies</a>
-            
   		<main>
             <form class= "editUserForm" action="/users/<%=user._id%>?_method=PUT" method="post">
 

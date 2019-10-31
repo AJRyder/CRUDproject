@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
+<%- include('./partials/navbar.ejs', {
+  user: user
+  }) %>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+      <header class="welcomeDisplay">
+        <h1 class="welcomeDisplay">
+          Welcome to Shot List 
+         
+        </h1>
+      </header>
 
-  </head>
-  <body>
-    <header>
-        <header class="cam-Geek-Header">
-            <div id="parallelogram2"></div>
-            <div id="parallelogram"></div>
-            <h1>Shot List </h1> 
-            <div class="registerUser">
-                <a href ="/auth/register">Register</a>
-            </div>
-            <div class="loginUser">
-                <a href ="/auth/login">Login</a>
-            </div>
-</header>
-
-      <h1 class="welcomeDisplay">Welcome to Shot List </h1>
    
-      <%=logOut%>
-    </header>
+   
+
+  
   </body>
 </html>

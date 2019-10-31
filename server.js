@@ -22,13 +22,16 @@ require('./db/db');
 
 
   app.use((req, res, next) => {
-    res.locals.user = req.session.user || {}
+    res.locals.user = req.session.user || {
+    }
+    res.locals.logOutMsg = "LOGOUT"
     next();
   });
 
 //Home page route 
 app.get('/',(req, res) => {
   res.render('index.ejs', {
+    user: req.session.currentUser,
     message: req.session.message,
     logOut: req.session.logOutMsg 
   })

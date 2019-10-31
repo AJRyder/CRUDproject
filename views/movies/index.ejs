@@ -1,33 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
+<%- include('../partials/navbar.ejs', {
+    user: user
+    }) %>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-</head>
-<body>
-        <header class="cam-Geek-Header">
-                <div id="parallelogram2"></div>
-                <div id="parallelogram"></div>
-                <h1>Shot List </h1> 
-                <div class="moviesToHomeRoute">
-                        <a href="/">Home</a>
-                </div>
-        </header>
+
     <h1 class="recentUpdatesDisplay">Recently Updated Films</h1>
     <div class="goToNewMoviePage"> 
-        <a href="/movies/new">New Movie</a>
+        <a href="/movies/new">Add New Movie</a>
     </div>
-
-    <div class="toUsersFromMovieIndx" class="movieNewPage">
-            <a href="/users/">Back to Users</a>
-        </div>
-    <div>
-      
             <% for(let i = 0; i < movies.length; i++){ %>
                 <a href="/movies/<%=movies[i]._id%>">
                     <img src="<%= movies[i].posterUrl %>" />

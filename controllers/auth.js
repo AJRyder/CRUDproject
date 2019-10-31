@@ -37,13 +37,24 @@ router.post('/login', (req, res, next) => {
                     res.redirect('/users')
                 } else {
                 req.session.message = 'Username or password are incorrect';
-                res.redirect('/sessions/login')
+                res.redirect('/auth/login')
                 }
         } else {
             req.session.message = 'Username or password are incorrect';
-            res.redirect('/sessions/login')
+            res.redirect('/auth/login')
         }
     });
 })
+
+router.get('/logout', (req, res) => {
+    req.session.destroy(function(err){
+          if(err){
+          console.log(err)
+        } else {
+            res.redirect('/')
+        }
+    })
+  })
+  
 
 module.exports = router

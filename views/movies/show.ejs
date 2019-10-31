@@ -1,29 +1,8 @@
-
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <title></title>
-            <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Fredericka+the+Great&display=swap" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        </head>
-        <body>
-                <header class="cam-Geek-Header">
-                            <div id="parallelogram2"></div>
-                            <div id="parallelogram"></div>
-                            <h1>Shot List </h1> 
-                            <div class="moviesToHomeRoute">
-                                    <a href="/">Home</a>
-                            </div>
-                </header>
-                    <div class="goToMoviePage" class="movieNewPage"> 
-                            <a href="/movies/">Back to Movies</a>
-                    </div>
-                        
-                    <div class="toUsersFromNewMovie" class="movieNewPage">
-                        <a href="/users/">Back to Users</a>
-                    </div>
-
+<!DOCTYPE html>
+<%- include('../partials/navbar.ejs', {
+    user: user
+    }) %>
+                  
                      <!-- Poster Art  -->
                      <div class="movieShowPagePoster">
                         <img src="<%=movie.posterUrl%>">
@@ -47,11 +26,11 @@
                    <span class="movieDetailsFlair"> Cinematographer:</span>  <%=movie.dop%></br>
                   
                    <span class="movieDetailsFlair"> Shooting Regions: </span>  <%=movie.shootRegions%></br>
+                </div> 
                        
                     
 
-                    </div> 
-
+        
         <button class="movieEditBtn">
             <a href="/movies/<%=movie._id%>/edit">+ Update Listing
             </a>
