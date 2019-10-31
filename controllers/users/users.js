@@ -34,8 +34,8 @@ router.get('/', async(req, res)=>{
       const allUsers = await User.find({});
       console.log(req.session.currentUser) 
       res.render('users/index.ejs', {
-          users: allUsers,
-         currentUser: req.session.username
+         users: allUsers,
+         currentUser: req.session.currentUser
       })
       } catch(err) { 
       res.send(err)

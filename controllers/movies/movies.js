@@ -7,7 +7,8 @@ router.get('/', (req, res) => {
     if(req.session.logged){
           Movie.find({}, (err, foundMovie)=>{
               res.render('movies/index.ejs', {
-                  movies: foundMovie
+                  movies: foundMovie,
+                  user: req.session.currentUser
                 });
              })
       } else {
@@ -78,6 +79,7 @@ router.get('/:id/edit', async(req,res)=>{
         const movie = await Movie.findById(req.params.id)
         res.render('movies/edit.ejs', {
             movie,
+            user: req.session.currentUser
         })
     } catch(err) { 
         res.send(err)

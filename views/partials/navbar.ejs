@@ -20,11 +20,9 @@
             <div class="nav-right">
               <% if(user)  { %> 
                 <div class="parallelogram">
-                    <span class="userGreeting">Hello <%=user.username%></span>
+                    <h1 class="userGreeting">Hello <%=user.username%></h1>
                 </div>
-                <div>
-                  <%user.profilePic%>
-                </div>
+              <div class= "parallelogram2">
               <a class="nav-link"href="/auth/logout">Log Out</a>
               <a class="nav-link" href="/users/">Profiles</a> 
               <a class="nav-link" href="/movies/">Movies</a> 
@@ -32,6 +30,7 @@
               <a href="/auth/register" class="nav-link">Register</a>
               <a href ="/auth/login" class="nav-link">Login</a>
               <% } %>
+              </div>
               <div class="hamburger-menu">
                 <div class="bar"></div>
                 <div class="bar"></div>

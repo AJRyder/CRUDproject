@@ -18,17 +18,41 @@
     left: -4em;
     top: 85px;
     width: 90%;
-	height: 30px;
+	height: 45px;
+	transform: skew(-30deg);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(155, 155, 155) 100%, rgba(242,242,242,1) 100%);
+    border: 1px solid white;
+    font-size: 30px;  
+}
+
+.parallelogram2{
+    display: flex; 
+    position: fixed;
+    align-items: center; 
+    margin-right: -4em; 
+    top: 85px;
+    width: 60%;
+    font-size: 20px; 
+	height: 50px;
 	transform: skew(-30deg);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(155, 155, 155) 100%, rgba(242,242,242,1) 100%);
     border: 1px solid white; 
 }
+.parallelogram h1 { 
+    align-items: center;
+
+}
+.parallelogram2 a{ 
+    transform: skew(30deg);
+}
 .userGreeting{
     font-size: 25px; 
     margin-left: 15%; 
-    top: 5%; 
-    text-align: justify; 
+    top: 0%; 
     color: whitesmoke;
+    text-transform: uppercase;
+    transform: skew(30deg);
+    font-family: Arial, Helvetica, sans-serif; 
 }
 body {
     margin: 100rem 0 0 0;
@@ -81,6 +105,7 @@ body, html {
     margin-left: 3%;
     text-transform: uppercase;
     color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hamburger-menu {
@@ -495,14 +520,24 @@ img:hover {
 }
 /* Movie Show page */
 .movieDetails{
-    position: absolute; 
-    color: white; 
-    top: 400px; 
-    left: 350px; 
+    display: flex;
+    position: flex; 
+    flex-direction: row; 
+    top: 0em; 
+    color: white;  
     font-family: Arial, Helvetica, sans-serif; 
     font-size: 20px; 
 }
+.movie-Column{
+    display: flex; 
+    position: flex; 
+    flex-direction: column;
+    padding: 2em; 
+}
 .movieEditBtn {
+    display: flex; 
+    positon: flex; 
+    top: 0; 
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
     height: auto;  
     width: auto; 
@@ -524,7 +559,7 @@ img:hover {
     top: 145px; 
 }
 .movieSynopsis{
-    position: absolute; 
+    position: flex; 
     left: 350px; 
     color: white; 
     font-family: Arial, Helvetica, sans-serif; 

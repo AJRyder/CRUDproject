@@ -6,31 +6,34 @@
     <h1 class="movieEditMsgDisplay">You're Editing</br>
     <%=movie.title%>
     </h1>
-    <a class="backToMovieShowPage" href="/movies/<%=movie._id%>">Back to <%=movie.title%> </a>
-    <main>
-            
-			<form class="movieEditForm" action="/movies/<%=movie._id%>?_method=PUT" method="post">
-				<span>Title</span></br><input type="text" name="title" value="<%=movie.title%>"/><br/>
-                <span>Poster Art</span></br><input type='text' name="posterUrl" value="<%=movie.posterUrl%>"/><br/>
-                <span>Shot On</span></br> <input type='text' name="shotOn" value="<%=movie.shotOn%>"><br/>
-                <span>Lenses</span></br><input type='text' name="lenses" value="<%=movie.lenses%>"><br/>
-                <span>Cast</span></br> <input type='text' name="cast" value="<%=movie.cast%>"><br/>
-                <span>Crew</span></br><input type='text' name='crew' value="<%=movie.crew%>"><br/>
+
+<div class = "movieDetails">
+    <div class="movie-Column">
+        <a class="backToMovieShowPage" href="/movies/<%=movie._id%>">Back to <%=movie.title%> </a>
+        <div class="movieShowPagePoster">
+            <img src="<%= movie.posterUrl %>" />
+        </div>
+    </div>
+
+    <div class="movie-Column movieEditForm">
+            <form action="/movies/<%=movie._id%>?_method=PUT" method="post">
+            <span>Title</span></br><input type="text" name="title" value="<%=movie.title%>"/><br/>
+            <span>Poster Art</span></br><input type='text' name="posterUrl" value="<%=movie.posterUrl%>"/><br/>
+            <span>Shot On</span></br> <input type='text' name="shotOn" value="<%=movie.shotOn%>"><br/>
+            <span>Lenses</span></br><input type='text' name="lenses" value="<%=movie.lenses%>"><br/>
+            <span>Cast</span></br> <input type='text' name="cast" value="<%=movie.cast%>"><br/>
+            <span>Crew</span></br><input type='text' name='crew' value="<%=movie.crew%>"><br/>
                 <span>Aspect Ratio</span></br><input type='text' name="aspectRatio" value="<%=movie.aspectRatio%>"></br>
                 <span>Director</span></br><input type='text' name='director' value="<%=movie.director%>"><br/>
                 <span>Cinematographer</span></br><input type='text' name='dop' value="<%=movie.dop%>"><br/>
                 <span>Synopsis</span></br><input type='text' name='synopsis' value="<%=movie.synopsis%>"><br/>
                 <span>Shooting Regions</span></br> <input type='text' name='ShootRegions' value="<%=movie.shootRegions%>"></br>
                 <span>Trailer</span></br> <input type='text' name='trailer' value="<%=movie.trailer%>"><br/>
-				<input type="submit" value="Update Movie"/>
+                <input type="submit" value="Update Movie"/>
             </form>
-            <div class="movieShowPagePoster">
-            <img src="<%= movie.posterUrl %>" />
-            </div>
-		</main>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </div>
+    </div>
+</div>
 
 </body>
 </html>

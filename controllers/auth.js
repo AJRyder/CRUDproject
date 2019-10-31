@@ -21,6 +21,7 @@ router.post('/registration', (req, res, next) => {
     User.create(userDbEntry, (err, user) => {
         req.session.username = user.username;
         req.session.logged   = true;
+        req.session.currentUser = user
         res.redirect('/users')
     });
 })
