@@ -412,7 +412,9 @@ img:hover {
     justify-content: space-evenly;
 }
 
-
+.trailerContainer{
+    max-width: 800px; 
+    max-height: 450px;  
 }
 .usersOverview a{
     color: whitesmoke;
@@ -720,5 +722,9 @@ h2 {
     @media(max-width: 780px){
         .row { 
             flex-direction: column;
+        }
+        .trailerContainer{
+            width: 320px; 
+            height: 180px; 
         }
     }
