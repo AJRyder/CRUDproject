@@ -15,6 +15,7 @@
 .parallelogram {
     display: fixed; 
     position: fixed;
+    justify-content: flex-start;
     left: -4em;
     top: 85px;
     width: 90%;
@@ -22,15 +23,25 @@
 	transform: skew(-30deg);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(155, 155, 155) 100%, rgba(242,242,242,1) 100%);
     border: 1px solid white;
-    font-size: 30px;  
+    font-size: 30px;
+    transition: left .50s ease-in;  
+}
+
+@media (max-width: 950px) {
+    .parallelogram {
+        left: -2rem;
+        transition: left .50s ease-in;
+    }
+    .parallelogram2 { 
+        transition: left .50s ease-out;
+    }
 }
 
 .parallelogram2{
     display: flex; 
-    flex-direction: row;
     position: fixed;
     align-items: center; 
-    margin-right: -4em; 
+    margin-right: 4%; 
     top: 85px;
     width: 60%;
     font-size: 20px; 
@@ -41,20 +52,23 @@
 }
 .parallelogram h1 { 
     align-items: center;
+   
+    margin-right: 5em; 
 
 }
 .parallelogram2 a{ 
+    display: flex; 
+    flex-shrink: 1; 
     transform: skew(30deg);
-    position: 
 }
 .userGreeting{
-    font-size: 25px; 
-    margin-left: 15%; 
-    top: 0%; 
+    font-size: 25px;
+    margin-left: 15%;
+    top: 0%;
     color: whitesmoke;
     text-transform: uppercase;
     transform: skew(30deg);
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 body {
     margin: 100rem 0 0 0;
@@ -69,7 +83,9 @@ body, html {
     width: 100%; 
     background-color: black; 
 }
-
+button { 
+    font-size: 20px; 
+}
 .nav {
     position: fixed;
     border-bottom: 1px solid black;
@@ -79,6 +95,7 @@ body, html {
     border-bottom: 1px solid white; 
     z-index: 1; 
 }
+
 
 .nav-header {
     max-width: 100%;
@@ -208,6 +225,10 @@ font-size: 36px;
 }
 .nav-center {
     width: 0%;
+}
+.parallelogram2 a, .parallelogram2 { 
+    display: none; 
+    width: 0%; 
 }
 
 }  
@@ -450,6 +471,7 @@ img:hover {
 .removeFromWatchListBtn{
     display: flex; 
     flex-direction: row; 
+    height: 10px; 
 
     
 }
@@ -497,20 +519,27 @@ img:hover {
 .userProfDelete{
     left: 130px; 
     top: 320px; 
-    width: 125px; 
+    width: 150px; 
     color: palevioletred;
     background-color: gold; 
 }
 .userShowEditBtn{
     position: flex; 
-    height: 18px; 
-    width: 125px; 
+    width: 150px;
+    background-color: rgba(62, 0, 177, 0.603); 
+}
+.userShowEditBtn a { 
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none; 
+    color: white; 
+     
 }
 .userShowEditBtn button:hover{
     background-color: grey; 
     color: white; 
+}
+h2 { 
+    text-transform: uppercase;
 }
 
 

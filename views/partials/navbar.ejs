@@ -20,7 +20,7 @@
             <div class="nav-right">
               <% if(user)  { %> 
                 <div class="parallelogram">
-                    <h1 class="userGreeting">Hello <%=user.username%></h1>
+                    <h1 class="userGreeting">User: <%=user.username%></h1>
                 </div>
               <div class= "parallelogram2">
               <a class="nav-link"href="/auth/logout">Log Out</a>
@@ -53,6 +53,7 @@
             </div>
         </div>
       </div>
+
           <script>
             const hamburgerMenu = document.querySelector('.hamburger-menu')
             const overlay = document.querySelector('.overlay')

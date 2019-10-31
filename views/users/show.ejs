@@ -17,13 +17,13 @@
         <% if(currentUser === user.username) {%>
             <div>
                 <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
-                    <button class="userProfDelete" class ="newUserBtnTxt" class="DELETE" type='submit'>Delete Profile </button>
+                    <button class="userProfDelete" class="DELETE" type='submit'>Delete Profile </button>
                 </form>
             </div>
                   
             <div>
                 <button class ="userShowEditBtn">
-                    <a class ="newUserBtnTxt" href="/users/<%=user._id%>/edit">Edit User</a>
+                    <a href="/users/<%=user._id%>/edit">Edit User</a>
                 </button>
             </div>
                 <% } %>    
@@ -39,7 +39,10 @@
             <div class="container">
                 <%for(let i = 0; i < user.watchList.length; i++) { %>
                     <div class="movieCard">
-                        <img class="watchImages" src=<%=user.watchList[i].posterUrl%>>
+                        <a href="/movies/<%=user.watchList[i]._id%>">
+                            <img class="watchImages" src=<%=user.watchList[i].posterUrl%>>
+                        </a>
+                        
 
                         <div class="displayBigPosterBtn">
                             <form action="<%=user.watchList[i].posterUrl%>" method="POST">
