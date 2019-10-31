@@ -19,6 +19,7 @@
     left: -4em;
     top: 85px;
     width: 90%;
+    max-width: 50em;
 	height: 45px;
 	transform: skew(-30deg);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(155, 155, 155) 100%, rgba(242,242,242,1) 100%);
@@ -39,11 +40,11 @@
 
 .parallelogram2{
     display: flex; 
-    position: fixed;
+    position: flex;
     align-items: center; 
     margin-right: 4%; 
     top: 85px;
-    width: 60%;
+    width: 300%;
     font-size: 20px; 
 	height: 50px;
 	transform: skew(-30deg);
@@ -52,13 +53,12 @@
 }
 .parallelogram h1 { 
     align-items: center;
-   
     margin-right: 5em; 
 
 }
 .parallelogram2 a{ 
     display: flex; 
-    flex-shrink: 1; 
+    text-align: center; 
     transform: skew(30deg);
 }
 .userGreeting{
@@ -182,9 +182,9 @@ transform: rotate(-135deg);
 height: 100%;
 width: 100%;
 position: fixed;
-background-color: rgba(0, 0, 0, 0.698);
+background: linear-gradient(90deg, rgba(0, 0, 0, 0.26) 0%, rgba(85, 0, 255, 0.322) 100%, rgba(242,242,242,1) 100%);
 top: 0;
-left: -123rem;
+left: -200rem;
 z-index: 1;
 transition: all .60s ease-in-out;
 }
@@ -205,33 +205,13 @@ flex-direction: column;
 
 .overlay-link {
 color: white;
+text-shadow: 2px black; 
 text-decoration: none;
+font-family: Arial, Helvetica, sans-serif; 
 font-size: 36px;
+z-index: 1; 
 }
 
-@media (max-width: 822px) {
-.hamburger-menu {
-    display: block;
-}
-
-.nav-right > a {
-    display: none;
-}
-.nav-right {
-    width: 40%;
-}
-.nav-left {
-    width: 60%;
-}
-.nav-center {
-    width: 0%;
-}
-.parallelogram2 a, .parallelogram2 { 
-    display: none; 
-    width: 0%; 
-}
-
-}  
 
 img { 
     height: 360px; 
@@ -425,16 +405,25 @@ img:hover {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none; 
 }
+.usersOverview{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
+
+}
 .usersOverview a{
     color: whitesmoke;
     text-decoration: none; 
     font-size: 20px; 
+    
+    
 }
 
 .usersOverview img {
         display: flex;
-        position: flex;  
         background-color: rgba(62, 0, 177, 0.603); 
         max-width: 500px; 
         width: 150px;
@@ -568,12 +557,14 @@ h2 {
 }
 .movieEditBtn {
     display: flex; 
-    positon: flex; 
+    position: flex; 
+    margin: 1vh; 
+    padding: 3px; 
     top: 0; 
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(85,0,255,1) 100%, rgba(242,242,242,1) 100%);
     height: auto;  
-    width: auto; 
-}
+    width: fit-content
+}    
 .movieEditBtn a{
     font-size: 30px; 
     text-decoration: none; 
@@ -659,12 +650,15 @@ h2 {
     color: grey; 
     text-align: center; 
 }
-.backToMovieShowPage{
+.backToMovieShowPage {
     position: flex; 
-    color: white; 
+    color: white;  
     text-decoration: none; 
+    text-align: center; 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px; 
+    background: rgba(62, 0, 177, 0.603); 
+    border: 1px solid white; 
+    margin: 2px;  
 }
 .toUsersFromMovieIndx a{
     color: white; 
@@ -697,3 +691,34 @@ h2 {
 .userWelcome{
     color: white; 
 }
+
+
+@media (max-width: 822px) {
+    .hamburger-menu {
+        display: block;
+    }
+    
+    .nav-right > a {
+        display: none;
+    }
+    .nav-right {
+        width: 40%;
+    }
+    .nav-left {
+        width: 60%;
+    }
+    .nav-center {
+        width: 0%;
+    }
+    .parallelogram2 a, .parallelogram2 { 
+        display: none; 
+        width: 0%; 
+    }
+    
+    }  
+
+    @media(max-width: 780px){
+        .row { 
+            flex-direction: column;
+        }
+    }

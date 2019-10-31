@@ -31,11 +31,12 @@
                             <span class="movieDetailsFlair"> Synopsis </span></br> <%=movie.synopsis%>
                         </div>
                         <div>
-                            <span class="movieDetailsFlair">Trailer:</span></br><%=movie.trailer%></br>
+                        </br><span class="movieDetailsFlair">Trailer:</span></br>
+                        <iframe width="420" height="315" src=<%=movie.trailer%>></iframe></br>
                         </div>
-                    </div>
+                    
 
-                    <div class ="movie-Column">
+                  
                         <div>
                             <span class="movieDetailsFlair"> Director:</span></br>  <%=movie.director%></br>
                             <span class="movieDetailsFlair"> Cinematographer:</span>  <%=movie.dop%></br>
@@ -43,27 +44,25 @@
                             <span class="movieDetailsFlair"> Lenses Used:</span>  <%=movie.lenses%></br>
                             <span class="movieDetailsFlair"> Aspect Ratio:</span>  <%=movie.aspectRatio%></br>
                         </div>
-                    </div>
-                     
-                    <div class ="movie-Column">
                         <div>
-                            <span class="movieDetailsFlair"> Cast</span> <%=movie.cast%></br>
-                            <span class="movieDetailsFlair"> Crew</span>  <%=movie.crew%></br>
+                            <span class="movieDetailsFlair"> Cast:</span> <%=movie.Cast%></br>
+                            <span class="movieDetailsFlair"> Crew:</span>  <%=movie.Crew%></br>
                             <span class="movieDetailsFlair"> Shooting Regions: </span>  <%=movie.shootRegions%></br>
                          </div>
                     </div>
+    </body>
+</html>
+  
+                     
+                  
 
 
-                    </div> 
-                    
-                </div>     
+                
                        
                     
 
         
   
-    </body>
-</html>
 
 
 

@@ -10,8 +10,8 @@ const movieSchema = new mongoose.Schema({
     director: String, 
     dop: String,
     synopsis: String, 
-    Cast: [String],
-    Crew: [String], 
+    Cast: String,
+    Crew: String, 
     shootRegions: String, 
     trailer: String,
 });
