@@ -12,6 +12,10 @@ NodeJS | JavaScript | HTML5 | CSS3 | Express | EJS
 # LOGIN PAGE 
 ![](https://imgur.com/Rtk4N6U.jpg)
 
-# MOVIE PAGE
+# INDIVIDUAL MOVIE PAGE (web)
+![](https://imgur.com/0ZkvCeW.jpg)
+# INDIVIDUAL MOVIE PAGE (mobile)
 Users' name is visible upon login 
+
 ![](https://imgur.com/WCZ9Kmm.jpg)
+
