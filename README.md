@@ -19,3 +19,10 @@ Users' name is visible upon login
 
 ![](https://imgur.com/WCZ9Kmm.jpg)
 
+
+# USER PROFILE PAGE 
+Users can navigate and edit their profile, and 
+view their movie watch list below 
+
+![](https://imgur.com/ptI5dUZ.jpg)
+
