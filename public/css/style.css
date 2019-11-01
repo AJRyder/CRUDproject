@@ -75,7 +75,16 @@ body {
     margin-top: 0px; 
     height: 77rem;
 }
+.homePage{ 
+    background-image: url("https://timedotcom.files.wordpress.com/2016/01/160127-old-hollywood-film-sets-11.jpg?quality=85");
 
+}
+
+.landingText{
+    font-size: 30px; 
+    background: rgba(42, 27, 128, 0.555); 
+    font-family: Arial, Helvetica, sans-serif; 
+}
 body, html { 
     margin: 5rem 0 0 0;
     padding: 0; 
@@ -115,7 +124,7 @@ button {
     text-align: center;
 }
 .nav-link:hover {
-    color: dodgerblue;
+    color: rgb(54, 1, 177);
     cursor: pointer;
 }
 
@@ -182,7 +191,7 @@ transform: rotate(-135deg);
 height: 100%;
 width: 100%;
 position: fixed;
-background: linear-gradient(90deg, rgba(0, 0, 0, 0.26) 0%, rgba(85, 0, 255, 0.322) 100%, rgba(242,242,242,1) 100%);
+background-color: rgba(0, 0, 0, 0.521);
 top: 0;
 left: -200rem;
 z-index: 1;
@@ -205,6 +214,7 @@ flex-direction: column;
 
 .overlay-link {
 color: white;
+background-color: rgba(0, 0, 0, 0.603); 
 text-shadow: 2px black; 
 text-decoration: none;
 font-family: Arial, Helvetica, sans-serif; 
@@ -231,9 +241,8 @@ img {
     color: white; 
 }
 .welcomeDisplay, .welcomeDisplay h1{
-    position: flex; 
-    top: 175px;
-    left: 150px;  
+    display: flex; 
+    flex-direction: column;  
     color: white; 
     font-family: 'Fredericka the Great', cursive;
     text-align: center; 
