@@ -1,13 +1,7 @@
 const mongoose = require('mongoose');
-// mongoose is an odm
-const connectionString = 'mongodb://localhost/movies';
-// blog
 
-// second argument, options object, we set
-// certain properties to true or false to do thing
-// things that we are doing is silencing depraction warnings
-// and setting for the transition of the mongoose module from
-// one version to another
+const connectionString = process.env.MONGODB_URI;
+
 mongoose.connect(connectionString, { useNewUrlParser: true,
                                      useUnifiedTopology: true,
                                      useCreateIndex: true,

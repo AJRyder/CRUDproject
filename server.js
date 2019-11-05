@@ -1,12 +1,18 @@
+
 const express             = require('express')
 const app                 = express();
 const bodyParser          = require('body-parser')
 const methodOverride      = require('method-override')
 const session             = require('express-session')
 const bcrypt              = require('bcryptjs')
+require('dotenv').config()
+
 
 //database
 require('./db/db');
+
+const PORT = process.env.PORT
+
 
 //middleware
 
@@ -52,8 +58,8 @@ app.get('/',(req, res) => {
 
 
 
-  app.listen(3000, () => {
-    console.log('server listening on port', 3000);
+  app.listen(PORT, () => {
+    console.log(`server listening on port, ${PORT})`;
   });
 
   
