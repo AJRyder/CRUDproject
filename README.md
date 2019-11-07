@@ -1,6 +1,6 @@
 # Shot List 
 A film site for fans to update their favorite film's technical specs
-
+Check out the page here ----->>>>> https://shotlist.herokuapp.com/users/5dc0c429e8c4d70017097d75
 # Technology Used 
 NodeJS | JavaScript | HTML5 | CSS3 | Express | EJS 
 
