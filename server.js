@@ -16,23 +16,23 @@ const PORT = process.env.PORT
 
 //middleware
 
-  app.use(bodyParser.urlencoded({extended: false}));
-  app.use(methodOverride('_method'));
-  app.use(express.static('public'))
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+app.use(express.static('public'))
 
-  app.use(session({
-    secret: "is this the martini", 
-    resave: false, 
-    saveUninitialized: false 
-  }));
+app.use(session({
+  secret: "is this the martini", 
+  resave: false, 
+  saveUninitialized: false 
+}));
 
 
-  app.use((req, res, next) => {
-    res.locals.user = req.session.user || {
-    }
-    res.locals.logOutMsg = "LOGOUT"
-    next();
-  });
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || {
+  }
+  res.locals.logOutMsg = "LOGOUT"
+  next();
+});
 
 //Home page route 
 app.get('/',(req, res) => {
@@ -44,22 +44,19 @@ app.get('/',(req, res) => {
 });
 
 
-
 //controllers
-  const moviesController = require('./controllers/movies/movies.js');
-  app.use('/movies', moviesController);
-  
-  const usersController = require('./controllers/users/users.js');
-  app.use('/users', usersController)
+const moviesController = require('./controllers/movies/movies.js');
+app.use('/movies', moviesController);
 
-  const authController = require('./controllers/auth.js');
-  app.use('/auth', authController)
+const usersController = require('./controllers/users/users.js');
+app.use('/users', usersController)
 
-
+const authController = require('./controllers/auth.js');
+app.use('/auth', authController)
 
 
-  app.listen(PORT, () => {
-    console.log(`server listening on port, ${PORT})`);
-  });
+app.listen(PORT, () => {
+  console.log(`server listening on port, ${PORT})`);
+});
 
   
