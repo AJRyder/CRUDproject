@@ -29,7 +29,7 @@ router.get('/', async(req, res)=>{
 })
 
 //new route 
-router.get('/new', async(req, res)=>{
+router.get('/new', (req, res)=>{
     try{
         console.log(req.session.currentUser)
         res.render('movies/new.ejs', {
@@ -66,7 +66,7 @@ router.post('/', async(req,res)=>{
         const createdMovie = await Movie.create(req.body)
         const foundUser = await User.findById(req.body.userId)
         foundUser.watchList.push(createdMovie)
-        foundUser.save()
+        await foundUser.save()
         res.redirect('/movies')
     } catch(err) {
         res.send(err)
@@ -106,9 +106,5 @@ router.delete('/:id', async(req, res)=>{
         res.send(err)
     }
 })
-
-
-
-
 
 module.exports = router 
