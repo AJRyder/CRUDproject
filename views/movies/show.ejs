@@ -1,73 +1,47 @@
 <!DOCTYPE html>
-<%- include('../partials/navbar.ejs', {
-    user: user
-    }) %>
+    <%- include('../partials/navbar.ejs', { user: user }) %>
                   
-                     <!-- Poster Art  -->
-                <!-- <div class='container'> -->
-                    <div class = "movieDetails row">
-                        <div class ="movie-Column">
-
-                            <div class="movieTitle">
-                                <%=movie.title%></br>
-                            </div>
-
-                            <div class="movieShowPagePoster">
-                                <img src="<%=movie.posterUrl%>">
-                            </div>
-                            <button class="movieEditBtn">
-                                    <a href="/movies/<%=movie._id%>/edit">+ Update Listing
-                                    </a>
-                                    
-                                </button>
-                                <form action="/users/<%=currentUser._id%>?_method=PUT" method="POST">
-                                    <input class="hidden-info" name="newWatchList" value=<%=movie._id%>>
-                                    <input type="submit" value="Add to Watch List">
-                                </form> 
+    <!-- Poster Art  -->
+    <!-- <div class='container'> -->
+            <div class = "movieDetails row">
+                <div class ="movie-Column">
+                    <div class="movieTitle">
+                        <%=movie.title%></br>
                     </div>
+                    <div class="movieShowPagePoster">
+                        <img src="<%=movie.posterUrl%>">
+                    </div>
+                    <button class="movieEditBtn">
+                        <a href="/movies/<%=movie._id%>/edit">
+                            + Update Listing
+                        </a>               
+                    </button>
+                    <form action="/users/<%=currentUser._id%>?_method=PUT" method="POST">
+                        <input class="hidden-info" name="newWatchList" value=<%=movie._id%>>
+                        <input type="submit" value="Add to Watch List">
+                    </form> 
+                </div>
 
-                    <div class ="movie-Column">
-                        <div class="movieSynopsis">
-                            <span class="movieDetailsFlair"> Synopsis </span></br> <%=movie.synopsis%>
-                        </div>
-                        <div>
+                <div class ="movie-Column">
+                    <div class="movieSynopsis">
+                        <span class="movieDetailsFlair"> Synopsis </span></br> <%=movie.synopsis%>
+                    </div>
+                    <div>
                         </br><span class="movieDetailsFlair">Trailer:</span></br>
                         <iframe class = "trailerContainer" width="1920" height="1080" src=<%=movie.trailer%>></iframe></br>
-                        </div>
-                    
-
-                  
-                        <div>
-                            <span class="movieDetailsFlair"> Director:</span></br>  <%=movie.director%></br>
-                            <span class="movieDetailsFlair"> Cinematographer:</span>  <%=movie.dop%></br>
-                            <span class="movieDetailsFlair"> Shot On:</span> </br><%=movie.shotOn%></br>
-                            <span class="movieDetailsFlair"> Lenses Used:</span>  <%=movie.lenses%></br>
-                            <span class="movieDetailsFlair"> Aspect Ratio:</span>  <%=movie.aspectRatio%></br>
-                        </div>
-                        <div>
-                            <span class="movieDetailsFlair"> Cast:</span> <%=movie.Cast%></br>
-                            <span class="movieDetailsFlair"> Crew:</span>  <%=movie.Crew%></br>
-                            <span class="movieDetailsFlair"> Shooting Regions: </span>  <%=movie.shootRegions%></br>
-                         </div>
                     </div>
+                    <div>
+                        <span class="movieDetailsFlair"> Director:</span></br>  <%=movie.director%></br>
+                        <span class="movieDetailsFlair"> Cinematographer:</span>  <%=movie.dop%></br>
+                        <span class="movieDetailsFlair"> Shot On:</span> </br><%=movie.shotOn%></br>
+                        <span class="movieDetailsFlair"> Lenses Used:</span>  <%=movie.lenses%></br>
+                        <span class="movieDetailsFlair"> Aspect Ratio:</span>  <%=movie.aspectRatio%></br>
+                    </div>
+                    <div>
+                        <span class="movieDetailsFlair"> Cast:</span> <%=movie.Cast%></br>
+                        <span class="movieDetailsFlair"> Crew:</span>  <%=movie.Crew%></br>
+                        <span class="movieDetailsFlair"> Shooting Regions: </span>  <%=movie.shootRegions%></br>
+                     </div>
+            </div>
     </body>
-</html>
-  
-                     
-                  
-
-
-                
-                       
-                    
-
-        
-  
-
-
-
-
-
-                       
-
-               
+</html>               
